@@ -14,9 +14,6 @@ jobs:
       - name: Update repoA
         run: |
           git submodule update --remote --merge
-          cd ..
-          git add configurations 
-          git commit -m "Update repoA"
-          git push 
+          
           
  
