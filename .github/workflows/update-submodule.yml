@@ -9,13 +9,10 @@ on:
 jobs:
     update-repo2: 
       runs-on:  ubnutu-latest
+    
       steps:
         - name: Checkout first repo 
           uses: actions/checkout@v2
-          with:
-            repository: keoKAY/configuration_experiment
-            token: ${{ secrets.GITHUB_TOKEN }}
-            ref: ${{ github.ref }}
         - name: Update repo2 submodule
           run: |
             git submodule foreach 'git checkout main && git pull origin main'
