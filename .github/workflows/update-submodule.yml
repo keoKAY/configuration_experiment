@@ -15,7 +15,7 @@ jobs:
           uses: actions/checkout@v2
         - name: Update repo2 submodule
           run: |
-            git submodule foreach 'git checkout main && git pull origin main'
+            git submodule foreach 'git checkout master && git pull origin master'
             git add .
             git commit -m "Update repo2 submodule"
             git push
