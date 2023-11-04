@@ -12,7 +12,7 @@ jobs:
         - name: Checkout first repo 
           uses: actions/checkout@v2
         - name: Update repo2 submodule
-          run: 
+          run: |
             git submodule update --update --merge
             git push origin master
 
