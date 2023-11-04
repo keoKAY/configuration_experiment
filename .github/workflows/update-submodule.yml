@@ -16,10 +16,12 @@ jobs:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           git submodule update --remote --merge
-          git config --global user.name "keoKAY"
-          git config --global user.email "keokay888@gmail.com"
-          git commit -am "update submodule"
-          git push origin master
+          git config --global user.name "Your Name"
+          git config --global user.email "your-email@example.com"
+          if [[ `git status --porcelain` ]]; then
+            git commit -am "Update submodule"
+            git push origin master
+          fi
 
 
       
