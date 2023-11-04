@@ -1,28 +1,28 @@
 # when push event  happen to branch master , i want to update submodule that is inside other repo (https://github.com/keoKAY/spring-boot-gradle-swagger)
-name: Update submodule on swagger repo
-on:
-  push:
-    branches:
-      - master
-jobs:
-  update-repo2:
-    runs-on: ubuntu-latest
+# name: Update submodule on swagger repo
+# on:
+#   push:
+#     branches:
+#       - master
+# jobs:
+#   update-repo2:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout first repo
-        uses: actions/checkout@v2
-      - name: Update repo2 submodule
-        env:
-          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
-        run: |
-          git submodule update --remote --merge
-          git config --global user.name "keoKAY"
-          git config --global user.email "keokay888@gmail.com"
-          git add .
-          if [[ `git status --porcelain` ]]; then
-            git commit -am "Update submodule"
-            git push origin master
-          fi
+#     steps:
+#       - name: Checkout first repo
+#         uses: actions/checkout@v2
+#       - name: Update repo2 submodule
+#         env:
+#           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+#         run: |
+#           git submodule update --remote --merge
+#           git config --global user.name "keoKAY"
+#           git config --global user.email "keokay888@gmail.com"
+#           git add .
+#           if [[ `git status --porcelain` ]]; then
+#             git commit -am "Update submodule"
+#             git push origin master
+#           fi
 
 
 
